@@ -1,0 +1,3 @@
+/opt/atlassian-agent/atlassian-agent.jar
+
+sudo nano /opt/atlassian/confluence/bin/setenv.sh

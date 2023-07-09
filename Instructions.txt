@@ -1,0 +1,14 @@
+https://www.heyvaldemar.com/install-confluence-on-ubuntu-server/
+
+wget https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-6.15.7-x64.bin
+sudo chmod a+x atlassian-confluence-6.15.7-x64.bin
+
+sudo ./atlassian-confluence-6.15.7-x64.bin
+
+sudo /etc/init.d/confluence stop
+
+sudo /etc/init.d/confluence start
+
+
+vim /etc/postgresql/14/main/pg_hba.conf
+/etc/init.d/postgresql restart
