@@ -9,6 +9,105 @@ sudo /etc/init.d/confluence stop
 
 sudo /etc/init.d/confluence start
 
+service postgresql status
+
+
+ service postgresql start
 
 vim /etc/postgresql/14/main/pg_hba.conf
+
+host    all             all             127.0.0.1/32            trust
+
+
 /etc/init.d/postgresql restart
+
+cd /opt
+
+mkdir atlassian-agent
+
+cd atlassian-agent
+
+
+sudo mkdir /opt/atlassian-agent/
+chmod -R 777 /opt/atlassian-agent/
+
+
+https://temp.sh/
+
+wget https://temp.sh/ZPrNQ/a.jar
+
+
+export JAVA_OPTS="-javaagent:/opt/atlassian-agent/a.jar ${JAVA_OPTS}"
+
+ps aux | grep java
+
+
+
+ps aux | grep java | grep agent
+
+stop the confulence docker container 
+or
+sudo /etc/init.d/confluence stop
+sudo /etc/init.d/confluence start
+
+
+java -jar atlassian-agent.jar -p conf -m aaa@bbb.com -n my_name -o https://zhile.io -s BH2O-KFAX-3O68-YQVZ
+
+cd /opt/atlassian/confluence
+
+cd bin
+
+./shutdown.sh
+
+
+https://www.cnblogs.com/eword/p/apps202110271.html
+
+java -jar /opt/atlassian-agent/atlassian-agent.jar -m admin@bolangit.cn -n bolangit.cn -p conf -o http://13.115.227.3:8090 -s BSXL-16X3-BURO-5P5N
+
+
+
+SMTP Configuation
+
+https://myaccount.google.com/apppasswords
+
+Generate the password
+
+Name: Gmail Server
+From address: anildalar8888@gmail.com
+
+From name: ${fullname} (Confluence)
+Subject prefix: [confluence]
+
+Server hostname: smtp.gmail.com
+Server port: 587
+User name:  anildalar8888@gmail.com
+Password: get from https://myaccount.google.com/apppasswords
+
+
+use TLS -> Yes tick
+
+-----------------------------------------------------------------------------------------------------------
+docker pull atlassian/confluence-server
+docker container create --name conf -p 8090:8090 -p 8091:8091 atlassian/confluence-server:latest
+
+docker container start conf
+docker exec -it conf /bin/bash
+
+sudo mkdir /opt/atlassian-agent/
+sudo cd /opt/atlassian-agent/
+wget https://temp.sh/ZPrNQ/atlassian-agent.jar.jar
+chmod -R 777 /opt/atlassian-agent/
+
+export JAVA_OPTS="$JAVA_OPTS -javaagent:/opt/atlassian-agent/atlassian-agent.jar"
+
+Exit
+
+Restart the docker container
+
+docker stop conf
+docker start conf
+
+java -jar /opt/atlassian-agent/atlassian-agent.jar -m admin@bolangit.cn -n bolangit.cn -p conf -o http://13.115.227.3:8090 -s BSXL-16X3-BURO-5P5N
+
+
+

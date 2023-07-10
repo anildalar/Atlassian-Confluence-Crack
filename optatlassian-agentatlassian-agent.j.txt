@@ -1,3 +1,5 @@
+export JAVA_OPTS = "-javaagent:/opt/atlassian-agent/a.jar ${JAVA_OPTS}"
+
 /opt/atlassian-agent/atlassian-agent.jar
 
 sudo nano /opt/atlassian/confluence/bin/setenv.sh
