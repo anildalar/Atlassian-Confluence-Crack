@@ -95,7 +95,7 @@ docker exec -it conf /bin/bash
 
 sudo mkdir /opt/atlassian-agent/
 sudo cd /opt/atlassian-agent/
-wget https://temp.sh/ZPrNQ/atlassian-agent.jar.jar
+wget https://temp.sh/ZPrNQ/atlassian-agent.jar
 chmod -R 777 /opt/atlassian-agent/
 
 export JAVA_OPTS="$JAVA_OPTS -javaagent:/opt/atlassian-agent/atlassian-agent.jar"
@@ -106,6 +106,8 @@ Restart the docker container
 
 docker stop conf
 docker start conf
+
+docker exec -it conf /bin/bash
 
 java -jar /opt/atlassian-agent/atlassian-agent.jar -m admin@bolangit.cn -n bolangit.cn -p conf -o http://13.115.227.3:8090 -s BSXL-16X3-BURO-5P5N
 
